@@ -49,17 +49,12 @@ void start(){
     }while (pressedkey != desiredkey);
     cout <<"                                  LOADING.......                                "<<endl;
     cout <<"\n     NOTE: During the combat press \'j' for heavy attack and \n\t\t 'l' for light attack."<<endl;
-    cout <<"\n To EXIT the game press 0 anytime on your keyboard";
+    cout <<"\n To EXIT the game press 0 during input on your keyboard";
     cout<<endl;
     system ("pause");
     system ("cls");
 }
-bool askForRetry() {
-    char response;
-    cout << "Do you want to retry? (y/n): ";
-    cin >> response;
-    return (response == 'y' || response == 'Y');
-}
+
 
 void menu(){
     system("color 4f");
