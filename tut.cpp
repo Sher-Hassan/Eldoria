@@ -756,7 +756,6 @@ void boss(){
     do{
     while (heroesRemaining > 0 && enemy_health > 0){
         cout <<"\n\n\t\tYour Turn HEROES"<< endl;
-        cout <<"\t\t\t HEROES: "<<heroesRemaining<<endl;
         cout << "\n\t\t\t\t\t\t\tMorgaroth's Health: " << enemy_health << endl;
         for(int i = 0; i < 3; i++){
             if (heroes_health[i] > 0){
@@ -768,7 +767,7 @@ void boss(){
         if(h_turn == 'j' || h_turn == 'J'){
             srand(static_cast<unsigned int>(time(0)));
             int enemy_damage = rand() % (enemies.e_damage[2]/2);
-            int targetHero = rand() % 5;
+            int targetHero = rand() % 3;
             if(heroes_health[targetHero] > 0) {
                 heroes_health[targetHero] -= enemy_damage;
                 if (heroes_health[targetHero] <= 0){
@@ -779,7 +778,7 @@ void boss(){
         }else if(h_turn == 'l' || h_turn == 'L'){
             srand(static_cast<unsigned int>(time(0)));
             int enemy_damage = rand() % enemies.e_damage[2];
-            int targetHero = rand() % 5;
+            int targetHero = rand() % 3;
             if(heroes_health[targetHero] > 0) {
                 heroes_health[targetHero] -= enemy_damage;
                 if (heroes_health[targetHero] <= 0){
@@ -855,13 +854,7 @@ void stage3(){
     cout << "\n\n\n                                     BATTLE BEGINS!                     " << endl;
     boss();
 }
-void end(){
-    
-    
-    system ("pause");
-    system("cls");
-    cout <<"\n\n\n\n\t\t\t\t THANKS FOR PLAYING!"<<endl;
-}
+
 int main(){
     start();
     menu();
